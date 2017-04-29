@@ -14,7 +14,7 @@ for (var l = 0; l < word.length; l++) {
 document.getElementById("underscoredword").innerHTML = ("The Word: <br>" + wordLettersArray.join(" "));
 
 var wrongLettersArray = [];
-document.getElementById("wrongletters").innerHTML = ("Wrong Un's Pardner: <br>" + wrongLettersArray);
+document.getElementById("wrongletters").innerHTML = ("Wrong Un's: <br>" + wrongLettersArray);
 
 var remainingLettersInWord = word.length;
 var lettersLeft = remainingLettersInWord;
@@ -25,7 +25,7 @@ var chancesLeft = chances;
 document.getElementById("chancesleft").innerHTML = ("Tries till the noose: <br>" + chancesLeft);
 
 
-var message = "Press a letter to guess the word. You only have 6 chances before Ronnie hangs.";
+var message = "Press a letter to guess the word. You only have 6 chances before Wicked Ronnie hangs.";
 document.getElementById("message").innerHTML = (message);
 
 
@@ -38,7 +38,7 @@ document.onkeydown = function keyUp (event){
 				lettersLeft--;
 				if (lettersLeft === 0){
 					document.getElementById("message").innerHTML = ("You Win! Yippi!");
-					alert("Nice Win Cowboy, wanna saddle back up?");
+					alert("Nice Win Cowboy, ready to hit the trail again?");
 						if(confirm){
 							reset();
 						}
@@ -47,27 +47,32 @@ document.onkeydown = function keyUp (event){
 		}
 	}else if (word.indexOf(event.key) < 0){
 		wrongLettersArray.push(event.key);
-		document.getElementById("wrongletters").innerHTML = ("Wrong Un's Pardner: <br>" + wrongLettersArray.join(" "));
+		document.getElementById("wrongletters").innerHTML = ("Wrong Un's: <br>" + wrongLettersArray.join(" "));
 		chancesLeft--;
 			if (chancesLeft === 5) {
 				document.getElementById("picture").src = "assets/images/hangman2.jpg";
+				document.getElementById("message").innerHTML = ("Tarnations!");
 				}
 				if (chancesLeft === 4) {
 					document.getElementById("picture").src = "assets/images/hangman3.jpg";
+					document.getElementById("message").innerHTML = ("Well, it's but a scratch.");
 				}
 				if (chancesLeft === 3) {
 					document.getElementById("picture").src = "assets/images/hangman4.jpg";
+					document.getElementById("message").innerHTML = ("You sure you're trying?");
 				}
 				if (chancesLeft === 2) {
 					document.getElementById("picture").src = "assets/images/hangman5.jpg";
+					document.getElementById("message").innerHTML = ("Well I'll be doggone, he's turning red!");
 				}
 				if (chancesLeft === 1) {
 					document.getElementById("picture").src = "assets/images/hangman6.jpg";
+					document.getElementById("message").innerHTML = ("So long Wicked Ronnie, may you find your home on the range.")
 				}		
 				if (chancesLeft === 0) {
 					document.getElementById("picture").src = "assets/images/hangman7.jpg";
 					document.getElementById("message").innerHTML = "You Lose! Tarnations!";
-					alert("Heavens to Betsy, that was a rough ride. Want to go again?");
+					alert("Heavens to Betsy, that was a rough ride. Ready to saddle back up?");
 					if (confirm){
 						reset();
 					}
