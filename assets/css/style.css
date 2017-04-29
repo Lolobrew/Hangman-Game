@@ -7,15 +7,22 @@
 
 .jumbotron h4 {
 	font-size: 25px;
-	color: #FF030D;
+	color: #525C65;
 	text-align: center;
+}
+
+#content {
+	background-color: #fdf8ff;
+	border: 2px inset red;
+
 }
 
 #picture {
 	position: relative;
-	top: 40px;
-	height: 375px;
-	width: 400px;
+	top: 80px;
+	height: 420px;
+	width: 450px;
+	border: 1px inset black;
 }
 
 .page-header h1 {
